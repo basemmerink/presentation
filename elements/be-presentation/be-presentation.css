@@ -1,0 +1,13 @@
+core-animated-pages:focus {
+    outline: none;
+}
+
+.title {
+    font-size: 96px;
+    color: #33691E;
+}
+
+.subtitle {
+    font-size: 48px;
+    color: #9E9E9E;
+}

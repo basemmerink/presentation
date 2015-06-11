@@ -1,0 +1,52 @@
+<link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="../../bower_components/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="../../bower_components/core-a11y-keys/core-a11y-keys.html">
+
+<link rel="import" href="../be-slide/be-slide.html">
+<link rel="import" href="../be-title/be-title.html">
+<link rel="import" href="../be-content/be-content.html">
+
+<polymer-element name="be-presentation" on-tap="{{slide}}">
+    <template>
+        <link rel="stylesheet" href="be-presentation.css">
+        <core-a11y-keys id="keys" target="{{parentElement}}" keys="left" on-keys-pressed="{{slideLeft}}"></core-a11y-keys>
+        <core-a11y-keys id="keys" target="{{parentElement}}" keys="right" on-keys-pressed="{{slideRight}}"></core-a11y-keys>
+        <core-a11y-keys id="keys" target="{{parentElement}}" keys="space" on-keys-pressed="{{slide}}"></core-a11y-keys>
+        <core-animated-pages id="pages"
+                             tabindex="0"
+                             transitions="slide-from-right"
+                             valueattr="id"
+                             selected="{{selected}}">
+            <be-slide id="1">
+                <be-title>
+                </be-title>
+                <be-content>
+                    <h1 class="title">Sogyo e-learning</h1>
+                    <div class="subtitle">Afstudeerpresentatie Bas Emmerink</div>
+                </be-content>
+            </be-slide>
+            <be-slide id="2">
+                <be-title>
+                    <h1>Inhoudsopgave</h1>
+                </be-title>
+                <be-content>
+                    <li>Opdracht</li>
+                    <li>Project</li>
+                    <li>Demo</li>
+                    <li>Conclusie</li>
+                </be-content>
+            </be-slide>
+            <be-slide id="3">
+                <be-title center>
+                    <h1>Test 2</h1>
+                </be-title>
+            </be-slide>
+            <be-slide id="4">
+                <be-title right>
+                    <h1>Test 3</h1>
+                </be-title>
+            </be-slide>
+        </core-animated-pages>
+    </template>
+    <script src="be-presentation.js"></script>
+</polymer-element>

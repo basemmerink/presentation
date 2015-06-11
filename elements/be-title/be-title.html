@@ -1,0 +1,40 @@
+<polymer-element name="be-title" attributes="center right" noscript>
+    <template>
+        <style>
+            ::content h1 {
+                background: #F1F8E9;
+                font-size: 96px;
+            }
+        </style>
+        <template if="{{center == null && right == null}}">
+            <div horizontal layout flex>
+                <div flex layout start start-justified horizontal>
+                    <content></content>
+                </div>
+                <div layout center center-justified vertical>
+                    <img src="../../images/logo.jpg" width="150px" height="150px">
+                </div>
+            </div>
+        </template>
+        <template if="{{center != null}}">
+            <div horizontal layout flex>
+                <div flex layout center center-justified horizontal>
+                    <content></content>
+                </div>
+                <div layout center center-justified vertical>
+                    <img src="../../images/logo.jpg" width="150px" height="150px">
+                </div>
+            </div>
+        </template>
+        <template if="{{right != null}}">
+            <div horizontal layout flex>
+                <div flex layout end end-justified horizontal>
+                    <content></content>
+                </div>
+                <div layout center center-justified vertical>
+                    <img src="../../images/logo.jpg" width="150px" height="150px">
+                </div>
+            </div>
+        </template>
+    </template>
+</polymer-element>
