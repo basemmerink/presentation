@@ -1,12 +1,13 @@
 <link rel="import" href="../../bower_components/core-animated-pages/core-animated-pages.html">
 <link rel="import" href="../../bower_components/core-animated-pages/transitions/slide-from-right.html">
 <link rel="import" href="../../bower_components/core-a11y-keys/core-a11y-keys.html">
+<link rel="import" href="../../bower_components/paper-button/paper-button.html">
 
 <link rel="import" href="../be-slide/be-slide.html">
 <link rel="import" href="../be-title/be-title.html">
 <link rel="import" href="../be-content/be-content.html">
 
-<polymer-element name="be-presentation" on-tap="{{slide}}">
+<polymer-element name="be-presentation">
     <template>
         <link rel="stylesheet" href="be-presentation.css">
         <core-a11y-keys id="keys" target="{{parentElement}}" keys="left" on-keys-pressed="{{slideLeft}}"></core-a11y-keys>
@@ -15,9 +16,8 @@
         <core-animated-pages id="pages"
                              tabindex="0"
                              transitions="slide-from-right"
-                             valueattr="id"
                              selected="{{selected}}">
-            <be-slide id="1">
+            <be-slide>
                 <be-title>
                 </be-title>
                 <be-content>
@@ -25,9 +25,9 @@
                     <div class="subtitle">Afstudeerpresentatie Bas Emmerink</div>
                 </be-content>
             </be-slide>
-            <be-slide id="2">
+            <be-slide>
                 <be-title>
-                    <h1>Inhoudsopgave</h1>
+                    Inhoud
                 </be-title>
                 <be-content>
                     <li>Opdracht</li>
@@ -36,15 +36,216 @@
                     <li>Conclusie</li>
                 </be-content>
             </be-slide>
-            <be-slide id="3">
+            <be-slide>
                 <be-title center>
-                    <h1>Test 2</h1>
+                    <div class="title">Opdracht</div>
                 </be-title>
+                <be-content>
+                    <li>Aanleiding</li>
+                    <li>Probleem</li>
+                    <li>Doel</li>
+                </be-content>
             </be-slide>
-            <be-slide id="4">
-                <be-title right>
-                    <h1>Test 3</h1>
+            <be-slide>
+                <be-title>
+                    Aanleiding
                 </be-title>
+                <be-content>
+                    <li>Nieuwe werknemers</li>
+                    <li>E-learning</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Probleem
+                </be-title>
+                <be-content>
+                    <li>Traag</li>
+                    <li>Architectuur</li>
+                    <li>Verouderd</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Probleem - Traag
+                </be-title>
+                <be-content>
+                    <paper-button on-tap="{{traag}}" raised>Start cursus</paper-button>
+                    <div id="traagOutput"></div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Probleem - Architectuur
+                </be-title>
+                <be-content>
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/ontwerp.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Probleem - Verouderd
+                </be-title>
+                <be-content>
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/oud_systeem.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Doel
+                </be-title>
+                <be-content>
+                    <li>Nieuw systeem</li>
+                    <li>Snel</li>
+                    <li>Overdraagbaar</li>
+                    <li>"Mooi"</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title center>
+                    <div class="title">Project</div>
+                </be-title>
+                <be-content>
+                    <li>Onderzoek</li>
+                    <li>Ontwerp</li>
+                    <li>Applicatie</li>
+                    <li>Tests</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek
+                </be-title>
+                <be-content>
+                    <li>Hoe worden tegenwoordig webapplicaties gemaakt?</li>
+                    <li>Criteria</li>
+                    <li>SOFEA</li>
+                    <li>Frameworks</li>
+                    <li>Polymer</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - Criteria
+                </be-title>
+                <be-content>
+                    <li>Onderhoudbaar</li>
+                    <li>Responsive</li>
+                    <li>Showcase</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - SOFEA
+                </be-title>
+                <be-content>
+                    Wat is het?
+                    <div id="sofea" on-tap="{{sofeaChange}}"><b>SOA</b> - <b>S</b>ervice <b>O</b>riented <b>A</b>rchitecture</div>
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/sofea_1.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - SOFEA
+                </be-title>
+                <be-content>
+                    Hoe werkt het?
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/sofea_2.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - Frameworks
+                </be-title>
+                <be-content>
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/logos.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - Frameworks
+                </be-title>
+                <be-content>
+                    <div flex layout horizontal center center-justified>
+                        <img src="../../images/vergelijking.png">
+                    </div>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - Polymer
+                </be-title>
+                <be-content>
+                    <li>Onderhoudbaar door MVC/Web Components</li>
+                    <li>Responsive door Data Binding/core-ajax</li>
+                    <li>Showcase door Material Design/paper-elements</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Onderzoek - Polymer
+                </be-title>
+                <be-content>
+                    Todo: Polymer toelichten, voorbeelden geven
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Ontwerp
+                </be-title>
+                <be-content>
+                    <li>Ontwerp</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Applicatie
+                </be-title>
+                <be-content>
+                    <li>Applicatie</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title>
+                    Tests
+                </be-title>
+                <be-content>
+                    <li>Tests</li>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title center>
+                    <div class="title">Demo</div>
+                </be-title>
+                <be-content>
+                    <paper-button on-tap="{{openDemo}}" raised>Start Demo</paper-button>
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title center>
+                    <div class="title">Conclusie</div>
+                </be-title>
+                <be-content>
+
+                </be-content>
+            </be-slide>
+            <be-slide>
+                <be-title></be-title>
+                <be-content>
+                    <div horizontal layout center center-justified flex>
+                        <h1 class="title">Fin</h1>
+                    </div>
+                </be-content>
             </be-slide>
         </core-animated-pages>
     </template>
