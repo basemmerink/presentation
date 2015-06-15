@@ -63,5 +63,9 @@ Polymer({
 
     sofeaChange: function() {
         this.$.sofea.innerHTML = "SO<b>FE</b>A - Service Oriented <b>F</b>ront <b>E</b>nd Architecture"
+    },
+
+    openDemo: function() {
+        window.location = "http://yoogle.com:8080";
     }
 });
